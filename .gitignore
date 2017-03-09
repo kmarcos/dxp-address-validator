@@ -30,6 +30,7 @@ plugins-sdk/.classpath
 
 
 /modules/*/bin/
+/modules/**/build/
 /modules/**/.gitignore
 /modules/**/.sass-cache/
 /themes/dxp-theme/

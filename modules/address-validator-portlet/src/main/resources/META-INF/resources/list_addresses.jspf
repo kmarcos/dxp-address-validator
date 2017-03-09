@@ -29,7 +29,7 @@
 		</aui:col>
 		<c:if test="${currentAPI eq googleAPI}">
 		<aui:col columnWidth="${100-listwidth}">
-			<a href="http://maps.google.com/?q=${address.latitude},${address.longitude}" target="_blank">view map</a>
+			<a href="http://maps.google.com/?q=${address.latitude},${address.longitude}" target="_blank"><liferay-ui:message key="addressvalidator.label.view-map" /></a>
 		</aui:col>
 		</c:if>
 	</aui:container>

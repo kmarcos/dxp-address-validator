@@ -29,7 +29,7 @@
 %>
 
 
-<aui:input id='<%= validateButtonPrefix + addressesIndex %>' name='<%= validateButtonPrefix + addressesIndex %>' label="" type="button" value='<%= LanguageUtil.get(request, "addressvalidator.label.validate-address") %>'  cssClass="validate-address-button btn"/>
+<aui:input id='<%= validateButtonPrefix + addressesIndex %>' name='<%= validateButtonPrefix + addressesIndex %>' label="" type="button" value='<%= LanguageUtil.get(request, "addressvalidator.label.validate-address") %>'  cssClass="validate-address-button"/>
 
 
 <aui:script>
@@ -66,8 +66,8 @@ AUI.add('addressvalidationutil', function(A){
                         centered: true,
                         constrain2view: true,
                         cssClass: 'address-validator-portlet',
-                        width: 450,
-                        height: 300,
+                        width: 600,
+                        height: 100,
                         destroyOnHide: true
                     },
                     title: '<liferay-ui:message key="addressvalidator.title.address-validation" />',
