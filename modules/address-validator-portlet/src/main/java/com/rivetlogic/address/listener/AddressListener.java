@@ -25,7 +25,7 @@ import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.model.Address;
 import com.liferay.portal.kernel.model.BaseModelListener;
 import com.liferay.portal.kernel.model.ModelListener;
-import com.rivetlogic.address.events.CreateAddressExpandoAction;
+import com.rivetlogic.address.activator.AddressValidatorActivator;
 import com.rivetlogic.address.portlet.util.AddressValidatorConstants;
 import com.rivetlogic.address.service.AddressProcessingToolsLocalServiceUtil;
 
@@ -96,11 +96,11 @@ public class AddressListener extends BaseModelListener<Address> {
 		if (!matchedAddresses.isEmpty()) {
 			com.rivetlogic.address.model.Address rlAddress = matchedAddresses.get(0);
 			if (rlAddress.getLongitude() != null && !rlAddress.getLongitude().isEmpty()) {
-				model.getExpandoBridge().setAttribute(CreateAddressExpandoAction.ADDRESS_LONGITUDE_FIELD,
+				model.getExpandoBridge().setAttribute(AddressValidatorActivator.ADDRESS_LONGITUDE_FIELD,
 						rlAddress.getLongitude());
 			}
 			if (rlAddress.getLatitude() != null && !rlAddress.getLatitude().isEmpty()) {
-				model.getExpandoBridge().setAttribute(CreateAddressExpandoAction.ADDRESS_LATITUDE_FIELD,
+				model.getExpandoBridge().setAttribute(AddressValidatorActivator.ADDRESS_LATITUDE_FIELD,
 						rlAddress.getLatitude());
 			}
 		}

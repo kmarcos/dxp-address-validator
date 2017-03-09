@@ -36,7 +36,6 @@ import com.liferay.portal.kernel.security.permission.ActionKeys;
 import com.liferay.portal.kernel.service.ResourcePermissionLocalServiceUtil;
 import com.liferay.portal.kernel.service.RoleLocalServiceUtil;
 import com.liferay.portal.kernel.util.PortalUtil;
-import com.rivetlogic.address.events.CreateAddressExpandoAction;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
@@ -45,7 +44,7 @@ public class AddressValidatorActivator implements BundleActivator {
 	
 	public static final String ADDRESS_LONGITUDE_FIELD = "longitude";
 	public static final String ADDRESS_LATITUDE_FIELD = "latitude";
-	private static final Log _log = LogFactoryUtil.getLog(CreateAddressExpandoAction.class);
+	private static final Log _log = LogFactoryUtil.getLog(AddressValidatorActivator.class);
 
 	@Override
 	public void start(BundleContext bundleContext) throws Exception {
