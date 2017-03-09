@@ -20,18 +20,20 @@
 <c:set var="idx" value="0" />
 <c:forEach var="address" items="${matchedAddresses}" >
 	<aui:container>
-	   <c:set var="listwidth" value ="100" />
-	   <c:if test="${currentAPI eq googleAPI}">
-	       <c:set var="listwidth" value ="80" />
-	   </c:if>
-		<aui:col columnWidth="${listwidth}">
-			<aui:input cssClass="${pns}address-option" checked="${false}" id="validatedAddres${idx}" label="${address.fullAddress}" name="validatedAddres" type="radio" value='<%= AddressUtil.addressToJSONObject((Address)pageContext.getAttribute("address")).toString() %>' />
-		</aui:col>
-		<c:if test="${currentAPI eq googleAPI}">
-		<aui:col columnWidth="${100-listwidth}">
-			<a href="http://maps.google.com/?q=${address.latitude},${address.longitude}" target="_blank"><liferay-ui:message key="addressvalidator.label.view-map" /></a>
-		</aui:col>
-		</c:if>
+		   <c:set var="listwidth" value ="12" />
+		   <c:if test="${currentAPI eq googleAPI}">
+		       <c:set var="listwidth" value ="8" />
+		   </c:if>	  
+			<aui:col md="${listwidth}">
+				<aui:input cssClass="${pns}address-option" checked="${false}" id="validatedAddres${idx}" label="${address.fullAddress}" name="validatedAddres" type="radio" value='<%= AddressUtil.addressToJSONObject((Address)pageContext.getAttribute("address")).toString() %>' />
+			</aui:col>
+			<c:if test="${currentAPI eq googleAPI}">
+			<aui:col md="${12-listwidth}">
+				<div class="radio btn btn-sm" >
+				<a href="http://maps.google.com/?q=${address.latitude},${address.longitude}" target="_blank"><liferay-ui:message key="addressvalidator.label.view-map" /></a>
+				</div>
+			</aui:col>
+			</c:if>
 	</aui:container>
     <c:set var="idx" value="${idx + 1}" />
 </c:forEach>

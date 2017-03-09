@@ -19,8 +19,8 @@
 
 <style media="screen" type="text/css">
 .validate-address-button{
-	margin-top:25px !important;
-	margin-left:22px !important;
+	width: 30% !important;
+	border-width: 2px !important;
 }
 </style>
 
@@ -28,10 +28,11 @@
   String validateButtonPrefix ="validateAddressButton_"; 
 %>
 
-
-<aui:input id='<%= validateButtonPrefix + addressesIndex %>' name='<%= validateButtonPrefix + addressesIndex %>' label="" type="button" value='<%= LanguageUtil.get(request, "addressvalidator.label.validate-address") %>'  cssClass="validate-address-button"/>
-
-
+<%-- Button must be an input in order to have appropriate management of indexes --%>
+<aui:input id='<%= validateButtonPrefix + addressesIndex %>' name='<%= validateButtonPrefix + addressesIndex %>' label="" type="button" 
+	value='<%= LanguageUtil.get(request, "addressvalidator.label.validate-address") %>'  cssClass="validate-address-button btn btn-lg btn-default"
+	title='<%= LanguageUtil.get(request, "addressvalidator.label.validate-address") %>'/>
+	
 <aui:script>
 
 AUI.add('addressvalidationutil', function(A){
@@ -66,8 +67,8 @@ AUI.add('addressvalidationutil', function(A){
                         centered: true,
                         constrain2view: true,
                         cssClass: 'address-validator-portlet',
-                        width: 600,
-                        height: 100,
+                        width: 670,
+                        height: 150,
                         destroyOnHide: true
                     },
                     title: '<liferay-ui:message key="addressvalidator.title.address-validation" />',
@@ -81,7 +82,7 @@ AUI.add('addressvalidationutil', function(A){
 
     A.addressvalidationutil.initializesValidateAddressAction = function(event) {
     
-        var targetName = event.target.attr('id'); 
+        var targetName = event.target.attr('id');
         var buttonPrefix = '<%=validateButtonPrefix%>';
         var startPos = targetName.indexOf(buttonPrefix)+buttonPrefix.length;
         var addressIndex = targetName.substring(startPos);
@@ -126,7 +127,7 @@ AUI.add('addressvalidationutil', function(A){
                         centered: true,
                         constrain2view: true,
                         cssClass: 'address-validator-portlet',
-                        width: 500,
+                        width: 600,
                         height: 300,
                         destroyOnHide: true
                     },

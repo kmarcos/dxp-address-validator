@@ -76,7 +76,7 @@ public class AddressValidatorPortlet extends MVCPortlet {
 	public void doView(RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException {
 
 		 String callbackSelection = ParamUtil.getString(renderRequest, AddressValidatorConstants.PARAMETER_CALLBACK_SELECTION, StringPool.BLANK);
-	        String callbackCancel = ParamUtil.getString(renderRequest, AddressValidatorConstants.PARAMETER_CALLBACK_CANCEL, StringPool.BLANK);
+	     String callbackCancel = ParamUtil.getString(renderRequest, AddressValidatorConstants.PARAMETER_CALLBACK_CANCEL, StringPool.BLANK);
 	        
 	        if (callbackSelection.isEmpty() || callbackCancel.isEmpty()) {
 	            SessionErrors.add(renderRequest, "addressvalidator.error.callback-functions-required");

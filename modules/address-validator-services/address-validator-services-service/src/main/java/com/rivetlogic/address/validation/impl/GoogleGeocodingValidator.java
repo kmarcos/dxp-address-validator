@@ -169,7 +169,8 @@ public class GoogleGeocodingValidator implements AddressValidator {
                     
                     String formatedAddress = (String) xpath.evaluate(RESPONSE_XPATH_FORMATED_ADDRESS, result,
                             XPathConstants.STRING);
-                    _log.debug("formated Address (if applies) " + formatedAddress);
+                    if (_log.isDebugEnabled())
+                    	_log.debug("formated Address (if applies) " + formatedAddress);
                     
                     String longitude = (String) xpath.evaluate(RESPONSE_XPATH_LONG, result, XPathConstants.STRING);
                     String latitude = (String) xpath.evaluate(RESPONSE_XPATH_LATITUDE, result, XPathConstants.STRING);
@@ -200,7 +201,8 @@ public class GoogleGeocodingValidator implements AddressValidator {
                     resultAddress.setCountry(country);
                     resultAddress.setLongitude(longitude);
                     resultAddress.setLatitude(latitude);
-                    _log.debug("result Address " + resultAddress);
+                    if (_log.isDebugEnabled())
+                    	_log.debug("result Address " + resultAddress);
                     
                     completeAddressWithLiferayIds(resultAddress);
                     
@@ -245,7 +247,8 @@ public class GoogleGeocodingValidator implements AddressValidator {
     public List<Address> validateAddress(Address address) throws Exception {
         
         String requestURL = getRequestURL(address);
-        _log.debug("request URL " + requestURL);
+        if (_log.isDebugEnabled())
+        	_log.debug("request URL " + requestURL);
         
         try {
             URL url = new URL(requestURL);
